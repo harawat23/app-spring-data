@@ -56,5 +56,4 @@ public class MovieController {
     public Iterable<MovieProjection> getMovieProjection() {
         return movieRepository.findAllMovieProjectionsBy();
     }
-    
 }

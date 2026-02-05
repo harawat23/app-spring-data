@@ -32,6 +32,12 @@ public class Movie {
     @Relationship(value = "ACTED_IN", direction = Relationship.Direction.INCOMING)
     private List<Role> actors;
 
+    @Relationship(value="RATED" , direction=Relationship.Direction.INCOMING)
+    private List<Rating> ratings;
+
+    @Relationship(value = "IN_GENRE", direction = Relationship.Direction.OUTGOING)
+    private List<Genre> genres;
+
     public Movie(String movieId, String title, String plot, String poster, String url, String imdbId, String tmdbId,
                  String released, Long year, Long runtime, Long budget, Long revenue, Long imdbVotes, Double imdbRating,
                  String[] languages, String[] countries) {
@@ -123,5 +129,18 @@ public class Movie {
 
     public void setActors(List<Role> actors) {
         this.actors = actors;
+    }
+
+    
+    public List<Rating> getRatings() { return ratings; }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
+    }
+
+    public List<Genre> getGenres() { return genres; }
+
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
     }
 }
