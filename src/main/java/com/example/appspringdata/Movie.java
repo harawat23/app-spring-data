@@ -30,7 +30,7 @@ public class Movie {
     private String[] countries;
 
     @Relationship(value = "ACTED_IN", direction = Relationship.Direction.INCOMING)
-    private List<Person> actors;
+    private List<Role> actors;
 
     public Movie(String movieId, String title, String plot, String poster, String url, String imdbId, String tmdbId,
                  String released, Long year, Long runtime, Long budget, Long revenue, Long imdbVotes, Double imdbRating,
@@ -117,11 +117,11 @@ public class Movie {
         return countries;
     }
 
-    public List<Person> getActors() {
+    public List<Role> getActors() {
         return actors;
     }
 
-    public void setActors(List<Person> actors) {
+    public void setActors(List<Role> actors) {
         this.actors = actors;
     }
 }
